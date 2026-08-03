@@ -1,0 +1,13 @@
+EncounterKey,NOTE_ID,NOTE_TYPE,NOTE_TEXT
+9000001,1,ED Triage Note,"Triage 03:12. 34M BIB NYPD in custody following altercation. Handcuffed, escorted by two officers. Denies LOC. VSS. No EMS involvement documented."
+9000001,2,ED Provider Note,"HPI: 34 yo M brought in by NYPD after altercation at a bar, under arrest, presents for medical clearance prior to booking. Ambulatory on arrival with officers. No ambulance run sheet."
+9000002,1,ED Triage Note,"Triage 14:47. 28F BIB EMS with NYPD escort for psychiatric evaluation. Officers rode with the ambulance per EMS. Pt agitated en route."
+9000002,2,ED Provider Note,"HPI: 28 yo F EDP transport. FDNY EMS transported, NYPD accompanied the transport and remain at bedside. Involuntary evaluation initiated."
+9000003,1,ED Triage Note,"Triage 22:05. 45M BIBA for ETOH intoxication, found down at bus stop. NYPD present with patient at triage on arrival."
+9000003,2,ED Provider Note,"HPI: 45 yo M intoxicated, brought in by ambulance. Police at bedside on arrival, not under arrest. Pt cooperative."
+9000004,1,ED Triage Note,"Triage 09:30. 61F BIB EMS from home for chest pain onset 1 hr ago. Family present. No law enforcement involvement."
+9000004,2,ED Provider Note,"HPI: 61 yo F with substernal chest pain, EMS activated by daughter, transported by FDNY EMS. ECG on arrival."
+9000005,1,ED Triage Note,"Triage 17:58. 52M brought in by ambulance after neighbor dispute. Per EMS, NYPD called EMS to the scene; officers did not transport and were not present on ED arrival."
+9000005,2,ED Provider Note,"HPI: 52 yo M laceration to forearm. Police notified EMS from scene; patient arrived via ambulance alone. No officers accompanying."
+9000006,1,ED Triage Note,"Triage 11:15. 39M NYPD officer on duty, twisted right ankle stepping off curb. Walked in. Accompanied by: Self."
+9000006,2,ED Provider Note,"HPI: 39 yo M, police officer presenting with ankle inversion injury sustained on patrol. Self-presented to ED, no transport assistance."

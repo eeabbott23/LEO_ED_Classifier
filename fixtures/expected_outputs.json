@@ -1,0 +1,39 @@
+{
+  "_comment": "Expected classifications for fixtures/synthetic_notes.csv (fully synthetic, no PHI). transport_mode is the hard expectation; acceptable_rules lists rule_fired values consistent with the decision cascade. custody_context expectations are soft (exploratory field).",
+  "9000001": {
+    "transport_mode": "only_police",
+    "acceptable_rules": ["transport_by_police_only"],
+    "custody_context_expected": "criminal_custody",
+    "tests": "R4: police transport without EMS"
+  },
+  "9000002": {
+    "transport_mode": "police_and_ems",
+    "acceptable_rules": ["co_transport_police_and_ems", "police_present_at_arrival_with_ems"],
+    "custody_context_expected": "involuntary_psych_hold",
+    "tests": "R3 (co-transport branch): EMS transported, police accompanied"
+  },
+  "9000003": {
+    "transport_mode": "police_and_ems",
+    "acceptable_rules": ["police_present_at_arrival_with_ems"],
+    "custody_context_expected": "police_involved_no_custody",
+    "tests": "R3 (present-at-arrival branch): EMS transported, police present at triage"
+  },
+  "9000004": {
+    "transport_mode": "no_police",
+    "acceptable_rules": ["ems_only_transport"],
+    "custody_context_expected": "not_applicable",
+    "tests": "R5: EMS-only transport"
+  },
+  "9000005": {
+    "transport_mode": "no_police",
+    "acceptable_rules": ["police_initiated_ems_only"],
+    "custody_context_expected": "not_applicable",
+    "tests": "R2: police called EMS but did not transport or accompany"
+  },
+  "9000006": {
+    "transport_mode": "no_police",
+    "acceptable_rules": ["officer_as_patient_no_transport", "self_or_other_transport"],
+    "custody_context_expected": "not_applicable",
+    "tests": "R1: patient is an officer; self-presented"
+  }
+}

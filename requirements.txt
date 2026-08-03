@@ -1,0 +1,8 @@
+# Runtime dependencies for the transport classifier notebooks.
+# Install on Minerva inside a project venv/conda env; see README.
+pandas>=2.0
+openpyxl>=3.1        # .xlsx reading for pd.read_excel
+pydantic>=2.5
+openai>=1.40         # AzureOpenAI client + structured outputs
+python-dotenv>=1.0
+jupyter
