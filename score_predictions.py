@@ -32,6 +32,21 @@ def kappa(a, b):
     po = np.trace(O)/len(a); pe = ((O.sum(1)/len(a))*(O.sum(0)/len(a))).sum()
     return (po-pe)/(1-pe) if (1-pe) > 1e-12 else float("nan")
 
+def pabak(a, b, k=None):
+    """Prevalence-adjusted bias-adjusted kappa (supplement S6)."""
+    a, b = np.asarray(a), np.asarray(b)
+    kk = k or len(set(a) | set(b))
+    return (kk*float((a == b).mean()) - 1)/(kk - 1)
+
+def gwet_ac1(a, b):
+    """Gwet's AC1 — less prevalence-sensitive than Cohen's kappa (supplement S6)."""
+    a, b = np.asarray(a), np.asarray(b)
+    cats = sorted(set(a) | set(b)); k = len(cats)
+    po = float((a == b).mean())
+    pi = np.array([((a == c).mean() + (b == c).mean())/2 for c in cats])
+    pe = (pi*(1 - pi)).sum()/(k - 1)
+    return (po - pe)/(1 - pe) if (1 - pe) > 1e-12 else float("nan")
+
 def boot(a, b, fn, B=5000, seed=12345):
     a, b = np.asarray(a), np.asarray(b); rng = np.random.default_rng(seed); v = []
     for _ in range(B):
@@ -87,6 +102,14 @@ def main():
         plo, phi = cp_ci(tp, max(npred, 1)); rlo, rhi = cp_ci(tp, max(ngold, 1))
         print(f"  {NAMES[c]:<18} PPV {tp}/{npred} = {tp/max(npred,1):.2f} ({plo:.2f}-{phi:.2f})"
               f" | recall {tp}/{ngold} = {tp/max(ngold,1):.2f} ({rlo:.2f}-{rhi:.2f})")
+    # prevalence-adjusted agreement (supplement S6): kappa depends on the
+    # marginal distribution, which differs between evaluation strata, so the
+    # paper reports these alongside kappa when comparing strata.
+    ac1 = gwet_ac1(g, p); aclo, achi = boot(g, p, gwet_ac1)
+    print(f"  {'3-category AC1':<18} {ac1:.3f} (95% CI {aclo:.3f}-{achi:.3f})"
+          f"  | PABAK {pabak(g, p, k=3):.3f}"
+          f"  | gold marginals {np.bincount(g, minlength=3).tolist()}")
+
     flag_tp = int((g >= 1).sum())
     flo, fhi = cp_ci(flag_tp, n)
     print(f"  source-flag PPV (this file's charts): {flag_tp}/{n} = {100*flag_tp/n:.1f}%"

@@ -103,8 +103,8 @@ box(655, 1055, 355, 195, "Held-out\nevaluation set",
 box(1025, 1055, 220, 195, "Single\nscoring pass",
     ["no prompt", "changes"])
 box(1420, 1000, 360, 350, "Agreement vs\nprimary adjudicator",
-    ["Three-category κ 0.653", "(0.571–0.732)",
-     "Binary (any police vs none)", "κ 0.734 (0.619–0.833)",
+    ["Three-category κ 0.653", "(0.570–0.731)",
+     "Binary (any police vs none)", "κ 0.734 (0.619–0.834)",
      "Inter-adjudicator", "benchmark κ 0.761"], gap=14)
 
 arrow(240, 730 + 90 + 4, 240, 1020 - 95 - 4)                    # sample -> analyzable
