@@ -32,3 +32,7 @@ Thumbs.db
 .idea/
 .vscode/
 .split_salt
+
+# Run artifacts derived from the cohort — generated on-platform, never committed
+split_manifest_public.csv
+metadata_EVAL_v1.0.json

@@ -105,7 +105,7 @@ box(1025, 1055, 220, 195, "Single\nscoring pass",
 box(1420, 1000, 360, 350, "Agreement vs\nprimary adjudicator",
     ["Three-category κ 0.653", "(0.570–0.731)",
      "Binary (any police vs none)", "κ 0.734 (0.619–0.834)",
-     "Inter-adjudicator", "benchmark κ 0.761"], gap=14)
+     "Inter-adjudicator", "three-category κ 0.761"], gap=14)
 
 arrow(240, 730 + 90 + 4, 240, 1020 - 95 - 4)                    # sample -> analyzable
 arrow(240 + 125 + 4, 970, 655 - 177 - 4, 745, rad=-0.35)        # analyzable -> dev
@@ -117,7 +117,7 @@ arrow(1025 + 110 + 4, 1035, 1420 - 175 - 4, 1005, rad=0.0)      # scoring -> res
 
 ax.text(35, 1230,
         "reference standard: primary adjudicator;\n"
-        "62 charts double-coded, κ = 0.761",
+        "62 charts double-coded, three-category κ = 0.761",
         fontsize=6.4, fontstyle="italic", ha="left", va="center",
         linespacing=1.5)
 

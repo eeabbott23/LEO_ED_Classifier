@@ -42,9 +42,11 @@ revision (v1.1) is documented in `docs/approach.md`.
 | `make_figure1.py` | regenerates the manuscript's pipeline/validation-design figure |
 | `fixtures/` | synthetic charts + expected outputs (no PHI) — see below |
 
-`split_manifest_public.csv` (salted-hash split manifest) and
-`metadata_EVAL_v1.0.json` (run metadata) are generated on the secure platform
-by the two `make_*` scripts above and committed here after each release run.
+The salted-hash split manifest and the evaluation-run metadata JSON are
+generated on the secure platform by the two `make_*` scripts above. Both are
+run artifacts derived from the study cohort and are not published here; they
+are held on-platform and available from the corresponding author on
+reasonable request.
 
 ## Verify the pipeline without patient data
 
@@ -70,9 +72,9 @@ python score_predictions.py "outputs/predictions_EVAL_v1.0_*.jsonl" \
     <gold-standard>.csv --label-col "LEO-Transport?"
 ```
 
-regenerates the manuscript's performance tables exactly. The split manifest's
-salted hashes are verifiable against the raw identifiers with the salt held
-on-platform.
+regenerates the manuscript's performance tables exactly. `make_split_manifest.py`
+reproduces the development/evaluation split from the same seed, and its salted
+hashes are verifiable against the raw identifiers with the salt held on-platform.
 
 ## Secure-platform quickstart
 
