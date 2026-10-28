@@ -40,6 +40,7 @@ revision (v1.1) is documented in `docs/approach.md`.
 | `make_split_manifest.py` | emits the public salted-hash dev/eval split manifest |
 | `make_eval_metadata.py` | reconstructs the evaluation-run metadata JSON (documented as reconstructed) |
 | `make_figure1.py` | regenerates the manuscript's pipeline/validation-design figure |
+| `describe_validation_sample.py` | validation-sample characteristics (Supplement S9) and rule recorded per held-out disagreement (Supplement S10) |
 | `fixtures/` | synthetic charts + expected outputs (no PHI) — see below |
 
 The salted-hash split manifest and the evaluation-run metadata JSON are

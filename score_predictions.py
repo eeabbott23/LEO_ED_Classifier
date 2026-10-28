@@ -90,7 +90,7 @@ def main():
     g, p = m["gold"].to_numpy(), m["pred"].to_numpy()
     gb, pb = (g >= 1).astype(int), (p >= 1).astype(int)
 
-    print("=== TABLE 4: agreement ===")
+    print("=== Table 3: agreement ===")
     for tag, x, y in [("3-category", g, p), ("binary any-police", gb, pb)]:
         ag = int((x == y).sum()); lo, hi = cp_ci(ag, n)
         k = kappa(x, y); klo, khi = boot(x, y, kappa)
@@ -115,11 +115,11 @@ def main():
     print(f"  source-flag PPV (this file's charts): {flag_tp}/{n} = {100*flag_tp/n:.1f}%"
           f" ({100*flo:.1f}-{100*fhi:.1f})")
 
-    print("\n=== TABLE 5: confusion (rows = adjudicator, cols = classifier) ===")
+    print("\n=== Table 4: confusion (rows = adjudicator, cols = classifier) ===")
     print(pd.crosstab(m["gold"].map(NAMES), m["pred"].map(NAMES), margins=True).to_string())
 
     if "confidence" in m.columns:
-        print("\n=== TABLE 6: agreement by self-rated confidence ===")
+        print("\n=== Supplement S8: agreement by self-rated confidence ===")
         for tier in ("high", "medium", "low"):
             s = m[m["confidence"] == tier]
             if not len(s): continue

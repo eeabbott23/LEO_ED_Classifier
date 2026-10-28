@@ -5,6 +5,10 @@ script; this recreates it with one wording change in the Panel B results
 box: "3-way κ" -> "Three-category κ", "human κ" -> "Inter-adjudicator
 benchmark κ", to match the manuscript's terminology and avoid reading as
 a three-rater comparison.
+
+Panel A "Prompt + schema" box: "verbatim codebook" -> "adapted codebook".
+The prompt's category definitions were derived from the adjudication
+codebook but are not identical to it (see Table 1 and docs/approach.md).
 """
 import matplotlib
 
@@ -73,7 +77,7 @@ panels = [
      ["drop boilerplate;", "reassemble split", "notes; chronological;",
       "labeled headers"]),
     ("Prompt +\nschema",
-     ["verbatim codebook;", "NYC framing; rules", "R1–R8; confidence",
+     ["adapted codebook;", "NYC framing; rules", "R1–R8; confidence",
       "rubric; enum schema"]),
     ("GPT-5\nAzure OpenAI",
      ["institutional BAA —", "no PHI leaves", "boundary; hash-",
